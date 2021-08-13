@@ -17,6 +17,7 @@
   "author": "yourfriend",
   "license": "ISC",
   "dependencies": {
+    "@joshdb/core": "^1.2.6",
     "midi-player-js": "^2.0.14",
     "ws": "^8.1.0"
   },
