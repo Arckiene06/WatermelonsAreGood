@@ -14,7 +14,7 @@ client.on("ready", () => {
 })
 
 client.on("message", message => {
-	if(message.user._id == client.user._id) {
+	if(message.user._id == config.owner || client.user._id) {
 		CManager.handleMessage(message)
 		return
 	} 

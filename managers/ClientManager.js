@@ -27,7 +27,13 @@ export default class ClientManager extends EventEmitter {
 		})
 
 		this.ws.on("message", message => {
-			const packet = JSON.parse(message.toString())[0]
+			let packet
+			try {
+				packet = JSON.parse(message.toString())[0]
+			} catch {
+				return
+			}
+			
 			const type = packet.m
 			
 

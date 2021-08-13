@@ -1,5 +1,6 @@
 {
-	"url": "wss://mppclone.com:8443/",
+	"ws": "wss://mppclone.com:8443/",
 	"channel": "✧𝓓𝓔𝓥 𝓡𝓸𝓸𝓶✧",
-	"token": "put ur token here"
+	"token": "put ur token here",
+	"owner": ""
 }
