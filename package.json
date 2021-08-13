@@ -1,0 +1,26 @@
+{
+  "name": "watermelons-are-good",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "type": "module",
+  "keywords": [
+    "multiplayerpiano",
+    "piano",
+    "mpp",
+    "mpp-client-xt",
+    "sucks"
+  ],
+  "author": "yourfriend",
+  "license": "ISC",
+  "dependencies": {
+    "midi-player-js": "^2.0.14",
+    "ws": "^8.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
