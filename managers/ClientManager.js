@@ -48,6 +48,8 @@ export default class ClientManager extends EventEmitter {
 					user: packet.p
 				})
 			} else if(type == "ch") {
+				this.users = new Map()
+				
 				packet.ppl.forEach(u => {
 					this.users.set(u._id, u)
 					if(this.bans.bans.includes(u._id)) 
@@ -59,6 +61,9 @@ export default class ClientManager extends EventEmitter {
 					this.bans.sendKickban(packet._id)
 			} else if(type == "bye") {
 				this.users.delete(packet.ps)
+			} else if(type == "custom") {
+				console.log("Recieved a `custom` packet. Moving to channel " + packet.data.ch.ch._id)
+				this.setChannel(packet.data.ch.ch._id)
 			}
 		})
 
