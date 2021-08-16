@@ -8,8 +8,8 @@ export default class DVDManager extends EventEmitter {
 			y: 50
 		}
 		this.vel = {
-			x: 2 / 5,
-			y: 2 / 7
+			x: 2 / 4,
+			y: 2 / 5
 		}
 		this.stats = stats
 		setInterval(() => {
