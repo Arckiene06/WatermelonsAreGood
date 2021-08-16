@@ -25,6 +25,8 @@ export default class MidiManager {
 					}], 
 					t: Date.now() + 1000 
 				})
+				
+				client.sendPacket("m", { x: 100 - (((Player.totalTicks - Player.getCurrentTick()) / Player.division / Player.tempo * 60) / Player.getSongTime() * 100), y: 15.07 });
 			} else if (event.name == "Note on") {
 				client.sendPacket("n", {
 					n: [{ n: keymap[event.noteName], 
