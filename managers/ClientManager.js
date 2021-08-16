@@ -82,7 +82,13 @@ export default class ClientManager extends EventEmitter {
 			}
 		})
 
+		this.ws.on("close", (code, reason) => {
+			this.emit("end", `${code} - ${reason}`)
+		})
 
+		this.ws.on("error", () => {
+			this.emit("end", "Experienced error.")
+		})
 	}
 
 	setChannel(_id) {
