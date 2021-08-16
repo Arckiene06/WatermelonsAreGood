@@ -21,9 +21,12 @@ function startBot() {
 	})
 
 	client.on("end", (reason) => {
-		console.log("Client closed due to - " + reason)
-		
-		startBot()
+		console.log(`Client closed due to - ${reason}. Reconnecting in 2s.`)
+
+		setTimeout(() => {
+			console.log("Attempting to connect.")
+			startBot()
+		}, 2000)
 	})
 }
 
