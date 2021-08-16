@@ -18,17 +18,6 @@ export default class ClientManager extends EventEmitter {
 		this.dvd = new DVDManager()
 		this.ws = new WebSocket(this.url)
 		
-		this.dvd.on("update", () => {
-			if(!this.midi.player.isPlaying()) {
-				this.sendPacket("m", {x: this.dvd.pos.x, y: this.dvd.pos.y})
-			}
-		})
-
-		this.dvd.on("cornerHit", () => {
-			if(!this.midi.player.isPlaying()) {
-				this.sendMessage("< Corner hit!")
-			}
-		})
 
 		this.ws.on("open", () => {
 			setInterval(() => {
@@ -39,6 +28,18 @@ export default class ClientManager extends EventEmitter {
 			
 			this.sendPacket("hi", {
 				token: this.token,
+			})
+
+			this.dvd.on("update", () => {
+				if(!this.midi.player.isPlaying()) {
+					this.sendPacket("m", {x: this.dvd.pos.x, y: this.dvd.pos.y})
+				}
+			})
+	
+			this.dvd.on("cornerHit", () => {
+				if(!this.midi.player.isPlaying()) {
+					this.sendMessage("< Corner hit!")
+				}
 			})
 		})
 
