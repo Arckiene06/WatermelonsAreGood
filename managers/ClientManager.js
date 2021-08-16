@@ -15,7 +15,7 @@ export default class ClientManager extends EventEmitter {
 		this.users = new Map()
 		this.midi = new MidiManager(this)
 		this.bans = new BanManager(this)
-		this.dvd = new DVDManager()
+		this.dvd = new DVDManager({})
 		this.ws = new WebSocket(this.url)
 		
 
